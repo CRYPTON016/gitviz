@@ -32,3 +32,48 @@ body {
   stroke-width: 3;
   fill: none;
 }
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Accessibility: Better Focus Indicators */
+*:focus-visible {
+  outline: 2px solid var(--terminal-prompt);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Accessibility: Improved Touch Targets */
+button,
+a,
+input,
+select,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Skip Link Styling */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--terminal-bg);
+  color: var(--terminal-prompt);
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}

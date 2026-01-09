@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --terminal-bg: #1a1a2e;
+  --terminal-border: #16213e;
+  --terminal-text: #e4e4e7;
+  --terminal-prompt: #00ff88;
+  --terminal-accent: #ff6b35;
+  --terminal-glow: rgba(0, 255, 136, 0.3);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.graph-node:hover {
+  filter: brightness(1.2);
+}
+
+.branch-line {
+  stroke-width: 3;
+  fill: none;
+}
